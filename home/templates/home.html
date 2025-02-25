@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Do'kon - Bosh Sahifa</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+        body { background-color: #f4f4f4; color: #333; line-height: 1.6; }
+        .container { width: 80%; margin: auto; overflow: hidden; }
+        header { background: #333; color: #fff; padding: 20px 0; text-align: center; }
+        header h1 { font-size: 2em; }
+        nav { background: #444; padding: 10px 0; text-align: center; }
+        nav a { color: #fff; text-decoration: none; margin: 0 20px; font-size: 1.1em; }
+        nav a:hover { color: #ffcc00; }
+        .section { padding: 40px 0; text-align: center; }
+        .section h2 { margin-bottom: 20px; font-size: 1.8em; color: #333; }
+        .category { display: flex; justify-content: space-around; flex-wrap: wrap; }
+        .item {
+            background: #fff;
+            width: 30%;
+            margin: 10px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            text-decoration: none;
+            color: #333;
+        }
+        .item:hover { box-shadow: 0 0 15px rgba(0,0,0,0.2); }
+        .item img { max-width: 100%; height: auto; border-radius: 5px; }
+        .item h3 { margin: 10px 0; font-size: 1.2em; }
+        .item p { color: #666; }
+        footer { background: #333; color: #fff; text-align: center; padding: 20px 0; }
+        @media (max-width: 768px) { .item { width: 45%; } }
+        @media (max-width: 480px) { .item { width: 100%; } }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>TEXNOPARK NAMANGAN</h1>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <a href="#phones">Telefonlar</a>
+            <a href="#laptops">Noutbuklar</a>
+            <a href="#smartwatches">Smartsoatlar</a>
+        </div>
+    </nav>
+
+    <section id="phones" class="section">
+        <div class="container">
+            <h2>Telefonlar</h2>
+            <div class="category">
+                {% for phone in phones%}
+                    <a href="#" class="item">
+                        <img src="{{ phone.image.url }}" alt="{{ phone.name }}">
+                        <h3>"{{ phone.name }}</h3>
+                        <p>Narxi: {{ phone.price }} so'm</p>
+                    </a>
+                {% endfor %}
+                <a href="/phones/iphone-14-pro" class="item">
+                    <img src="https://via.placeholder.com/200" alt="Telefon 2">
+                    <h3>iPhone 14 Pro</h3>
+                    <p>Narxi: 12,000,000 so'm</p>
+                </a>
+                <a href="/phones/xiaomi-13" class="item">
+                    <img src="https://via.placeholder.com/200" alt="Telefon 3">
+                    <h3>Xiaomi 13</h3>
+                    <p>Narxi: 6,500,000 so'm</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="laptops" class="section">
+        <div class="container">
+            <h2>Noutbuklar</h2>
+            <div class="category">
+                {% for laptop in laptops %}
+                    <a href="#" class="item">
+                        <img src="{{ laptop.image.url }}" alt="{{ laptop.name }}">
+                        <h3>{{ laptop.name }}</h3>
+                        <p>Narxi: {{ laptop.price }} so'm</p>
+                    </a>
+                {% endfor %}
+                <a href="/laptops/dell-xps-13" class="item">
+                    <img src="https://via.placeholder.com/200" alt="Noutbuk 2">
+                    <h3>Dell XPS 13</h3>
+                    <p>Narxi: 13,500,000 so'm</p>
+                </a>
+                <a href="/laptops/hp-spectre-x360" class="item">
+                    <img src="https://via.placeholder.com/200" alt="Noutbuk 3">
+                    <h3>HP Spectre x360</h3>
+                    <p>Narxi: 14,000,000 so'm</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="smartwatches" class="section">
+        <div class="container">
+            <h2>Smartsoatlar</h2>
+            <div class="category">
+                {% for watch in watches %}
+                    <a href="#" class="item">
+                        <img src="{{ watch.image.url }}" alt="{{ watch.name }}">
+                        <h3>{{ watch.name }}</h3>
+                        <p>Narxi: {{ watch.price }} so'm</p>
+                    </a>
+                {% endfor %}
+                <a href="/smartwatches/galaxy-watch-5" class="item">
+                    <img src="https://via.placeholder.com/200" alt="Smartsoat 2">
+                    <h3>Samsung Galaxy Watch 5</h3>
+                    <p>Narxi: 3,800,000 so'm</p>
+                </a>
+                <a href="/smartwatches/garmin-venu-2" class="item">
+                    <img src="https://via.placeholder.com/200" alt="Smartsoat 3">
+                    <h3>Garmin Venu 2</h3>
+                    <p>Narxi: 4,000,000 so'm</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Online Do'kon. Barcha huquqlar himoyalangan.</p>
+        </div>
+    </footer>
+</body>
+</html>

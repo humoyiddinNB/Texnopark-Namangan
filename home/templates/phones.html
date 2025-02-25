@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ product.name }} - Telefon Haqida</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+        body { background-color: #f4f4f4; color: #333; line-height: 1.6; }
+        .container { width: 80%; margin: 40px auto; overflow: hidden; }
+        header { background: #333; color: #fff; padding: 20px; text-align: center; border-radius: 10px 10px 0 0; }
+        header h1 { font-size: 2.2em; letter-spacing: 1px; }
+        .content { background: #fff; padding: 30px; border-radius: 0 0 10px 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .product-image { max-width: 100%; height: auto; border-radius: 10px; border: 1px solid #ddd; margin-bottom: 20px; }
+        .product-details h2 { font-size: 1.8em; color: #222; margin-bottom: 15px; }
+        .product-details p { font-size: 1.2em; margin: 10px 0; color: #555; }
+        .product-details strong { color: #333; }
+        .back-link { display: inline-block; margin-top: 20px; padding: 10px 20px; background: #444; color: #fff; text-decoration: none; border-radius: 5px; transition: background 0.3s; }
+        .back-link:hover { background: #ffcc00; color: #333; }
+        footer { background: #333; color: #fff; text-align: center; padding: 20px; margin-top: 40px; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>{{ product.name }}</h1>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="content">
+            <img src="/media/phone_images/23.png" alt="{{ product.name }}" class="product-image">
+            <div class="product-details">
+                <h2>Telefon Haqida</h2>
+                <p><strong>Narxi:</strong> {{ product.price }} so'm</p>
+                <p><strong>Kategoriya:</strong> {{ product.category }}</p>
+                <p><strong>Slug:</strong> {{ product.slug }}</p>
+                <!-- Qo'shimcha ma'lumot uchun tasviriy -->
+                <p><strong>Tavsif:</strong> Bu {{ product.name }} modeli zamonaviy dizayn va yuqori unumdorlikka ega telefon.</p>
+            </div>
+            <a href="{% url 'home' %}" class="back-link">Orqaga</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Online Do'kon. Barcha huquqlar himoyalangan.</p>
+        </div>
+    </footer>
+</body>
+</html>
