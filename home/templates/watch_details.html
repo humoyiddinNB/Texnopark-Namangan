@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ watch.name }} - Texnopark Namangan</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #e9ecef 0%, #dfe9f3 100%);
+            font-family: 'Roboto', sans-serif;
+            color: #2c3e50;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        nav {
+            background: linear-gradient(90deg, #2c3e50 0%, #4ca1af 100%);
+            padding: 20px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 30px;
+            font-size: 1.3rem;
+            font-weight: 500;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: #f1c40f;
+            left: 0;
+            bottom: -5px;
+            transition: width 0.3s ease;
+        }
+        nav a:hover::after {
+            width: 100%;
+        }
+        nav a:hover {
+            color: #f1c40f;
+            transform: translateY(-2px);
+        }
+        .watch-card {
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            padding: 40px;
+            margin: 60px auto;
+            max-width: 800px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .watch-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+        }
+        .watch-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(90deg, #f1c40f, #e74c3c);
+            transition: height 0.3s ease;
+        }
+        .watch-card:hover::before {
+            height: 12px;
+        }
+        .watch-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.8rem;
+            color: #2c3e50;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .watch-price {
+            font-size: 2rem;
+            color: #e74c3c;
+            font-weight: 600;
+            background: #fce4e4;
+            padding: 10px 25px;
+            border-radius: 50px;
+            display: inline-block;
+            margin: 15px 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .watch-desc {
+            font-size: 1.3rem;
+            line-height: 1.7;
+            color: #7f8c8d;
+            margin: 25px 0;
+        }
+        .watch-image {
+            width: 100%;
+            max-height: 400px;
+            object-fit: contain;
+            border-radius: 15px;
+            background: #ecf0f1;
+            padding: 20px;
+            margin: 25px 0;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .watch-card:hover .watch-image {
+            transform: scale(1.05);
+        }
+        .watch-date {
+            font-size: 1rem;
+            color: #95a5a6;
+            font-style: italic;
+            margin-top: 20px;
+        }
+        .action-buttons {
+            margin-top: 30px;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+        .btn {
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        .btn-update {
+            background: linear-gradient(90deg, #3498db, #2980b9);
+            color: #fff;
+        }
+        .btn-update:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+            background: linear-gradient(90deg, #2980b9, #3498db);
+        }
+        .btn-delete {
+            background: linear-gradient(90deg, #e74c3c, #c0392b);
+            color: #fff;
+        }
+        .btn-delete:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
+            background: linear-gradient(90deg, #c0392b, #e74c3c);
+        }
+        footer {
+            background: linear-gradient(90deg, #2c3e50 0%, #4ca1af 100%);
+            color: #fff;
+            text-align: center;
+            padding: 25px 0;
+            margin-top: 60px;
+            box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.2);
+            font-size: 1.1rem;
+        }
+        @media (max-width: 768px) {
+            .watch-title { font-size: 2rem; }
+            .watch-price { font-size: 1.5rem; }
+            .watch-desc { font-size: 1.1rem; }
+            .watch-image { max-height: 300px; }
+            nav a { margin: 0 15px; font-size: 1rem; }
+            .action-buttons { flex-direction: column; gap: 15px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="{% url 'home' %}">Bosh Sahifa</a>
+        <a href="{% url 'laptops' %}">Kompyuterlar</a>
+        <a href="{% url 'phones' %}">Telefonlar</a>
+        <a href="{% url 'watches' %}">Smart Soatlar</a>
+    </nav>
+
+    <div class="container">
+        <div class="watch-card">
+            <h1 class="watch-title">{{ watch.name }}</h1>
+            <h2 class="watch-price">{{ watch.price }} so'm</h2>
+            <p class="watch-desc">{{ watch.description|default:"Tavsif mavjud emas" }}</p>
+            <img src="{{ watch.image.url }}" alt="{{ watch.name }}" class="watch-image" onerror="this.src='https://via.placeholder.com/600x400?text=Smart+Soat+Rasmi'">
+            <p class="watch-date">Qo'shilgan sana: {{ watch.created_at }}</p>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <a href="{% url 'watch_update' watch.id %}" class="btn btn-update">O‘zgartirish</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        © 2025 Texnopark Namangan | Innovatsiya va Texnologiya Markazi
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
