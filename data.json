@@ -1,0 +1,278 @@
+[
+{
+  "model": "home.watch",
+  "pk": 1,
+  "fields": {
+    "name": "Samsung R5",
+    "price": "7000000.00",
+    "description": "2025-02-26 10:27:20.886037+00:00",
+    "created_at": "2025-02-26T10:27:20.884Z",
+    "updated_at": "2025-02-26T18:50:00.474Z",
+    "image": "watch_images/smart.png"
+  }
+},
+{
+  "model": "home.watch",
+  "pk": 2,
+  "fields": {
+    "name": "Apple watch series 10",
+    "price": "9000000.00",
+    "description": "Форма часов: С закругленными краямиМикрофон: ЕстьДинамик: Есть",
+    "created_at": "2025-02-26T10:56:16.956Z",
+    "updated_at": "2025-02-27T20:12:35.785Z",
+    "image": "watch_images/series10.jpeg"
+  }
+},
+{
+  "model": "home.watch",
+  "pk": 3,
+  "fields": {
+    "name": "Huawei Watch gt3",
+    "price": "5000000.00",
+    "description": "juda yengil va ihcham",
+    "created_at": "2025-02-26T11:03:49.091Z",
+    "updated_at": "2025-02-26T11:03:49.091Z",
+    "image": "watch_images/huawei-watch-gt-3-assistant.png"
+  }
+},
+{
+  "model": "home.watch",
+  "pk": 4,
+  "fields": {
+    "name": "Google Pixel Watch 3",
+    "price": "9000000.00",
+    "description": "Google's Pixel Watch 3 offers one of the most elegant round-screen designs you'll see on a smartwatch and now comes in two size options to suit more wrists ...",
+    "created_at": "2025-02-26T18:44:16.763Z",
+    "updated_at": "2025-02-26T18:44:16.763Z",
+    "image": "watch_images/w3.jpg"
+  }
+},
+{
+  "model": "home.watch",
+  "pk": 5,
+  "fields": {
+    "name": "One Plus watch 2",
+    "price": "6000000.00",
+    "description": "OnePlus Watch 2 is the company's new and improved smartwatch that does a lot of things right.",
+    "created_at": "2025-02-26T18:47:05.841Z",
+    "updated_at": "2025-02-26T18:47:05.841Z",
+    "image": "watch_images/oneplus.png"
+  }
+},
+{
+  "model": "home.watch",
+  "pk": 6,
+  "fields": {
+    "name": "Samsung Galaxy Watch6",
+    "price": "9000000.00",
+    "description": "Samsung's Galaxy Watch 6 is the best Android watch for most people.",
+    "created_at": "2025-02-26T18:53:39.490Z",
+    "updated_at": "2025-02-26T18:53:39.490Z",
+    "image": "watch_images/watch6.webp"
+  }
+},
+{
+  "model": "home.watch",
+  "pk": 7,
+  "fields": {
+    "name": "Apple Watch Series 8",
+    "price": "7000000.00",
+    "description": "Apple Watch - это умный наручный гаджет от Apple, который объединяет стильный дизайн с передовыми технологиями. Он не только показывает время, но и отслеживает вашу физическую активность, заботится о вашем здоровье, позволяет получать уведомления,",
+    "created_at": "2025-02-26T18:57:47.352Z",
+    "updated_at": "2025-02-26T18:57:47.352Z",
+    "image": "watch_images/series8.jpeg"
+  }
+},
+{
+  "model": "home.watch",
+  "pk": 8,
+  "fields": {
+    "name": "Seiko RC-1000 (1984) ",
+    "price": "1400000.00",
+    "description": "eng birinchi smart soat",
+    "created_at": "2025-02-27T17:01:25.920Z",
+    "updated_at": "2025-02-27T20:19:06.210Z",
+    "image": "watch_images/siece.jpg"
+  }
+},
+{
+  "model": "home.phone",
+  "pk": 1,
+  "fields": {
+    "name": "Samsung galaxy s23",
+    "price": "12000000.00",
+    "description": "2025-02-26 10:27:20.881092+00:00",
+    "created_at": "2025-02-26T10:27:20.879Z",
+    "updated_at": "2025-02-26T10:27:20.883Z",
+    "image": "phone_images/23_SUlh86e.png"
+  }
+},
+{
+  "model": "home.phone",
+  "pk": 2,
+  "fields": {
+    "name": "Nokia N73",
+    "price": "200000.00",
+    "description": "2025-02-26 10:27:20.881092+00:00",
+    "created_at": "2025-02-26T10:27:20.879Z",
+    "updated_at": "2025-02-26T10:27:20.883Z",
+    "image": "phone_images/nokia.jpg"
+  }
+},
+{
+  "model": "home.phone",
+  "pk": 3,
+  "fields": {
+    "name": "Google pixel 7",
+    "price": "4000000.00",
+    "description": "2025-02-26 10:27:20.881092+00:00",
+    "created_at": "2025-02-26T10:27:20.879Z",
+    "updated_at": "2025-02-27T20:18:10.947Z",
+    "image": "phone_images/pixel7.jpg"
+  }
+},
+{
+  "model": "home.phone",
+  "pk": 5,
+  "fields": {
+    "name": "Samsung Galaxy Z Fold 6",
+    "price": "19000000.00",
+    "description": "Buy Samsung Galaxy Z Fold 6 Online In Nigeria At ₦2,810,000 - Best Prices, Fast Delivery, Secure Payment And Fast Support - Rifugio Nigeria.",
+    "created_at": "2025-02-26T18:59:55.497Z",
+    "updated_at": "2025-02-26T18:59:55.497Z",
+    "image": "phone_images/z6.png"
+  }
+},
+{
+  "model": "home.phone",
+  "pk": 6,
+  "fields": {
+    "name": "Nokia 6303",
+    "price": "5000000.00",
+    "description": "Eski yoshlikdagi hotiralarni eslatib yuboradigan telefonlar",
+    "created_at": "2025-02-26T19:09:53.887Z",
+    "updated_at": "2025-02-26T19:09:53.887Z",
+    "image": "phone_images/6303i.jpg"
+  }
+},
+{
+  "model": "home.phone",
+  "pk": 7,
+  "fields": {
+    "name": "Iphone 17 Air",
+    "price": "15000000.00",
+    "description": "Will be soon",
+    "created_at": "2025-02-26T19:14:45.219Z",
+    "updated_at": "2025-02-26T19:14:45.219Z",
+    "image": "phone_images/apple_iPhone_173.jpg"
+  }
+},
+{
+  "model": "home.phone",
+  "pk": 15,
+  "fields": {
+    "name": "Noki 5130 ExpresMusic",
+    "price": "1000000.00",
+    "description": "Eski bolalokdagi hotiralarni eslatadigan telefon",
+    "created_at": "2025-02-28T10:42:42.567Z",
+    "updated_at": "2025-02-28T10:42:42.567Z",
+    "image": "phone_images/expres5130_XIrHq0x.png"
+  }
+},
+{
+  "model": "home.laptop",
+  "pk": 1,
+  "fields": {
+    "name": "MacBook pro air pair",
+    "price": "15000000.00",
+    "description": "2025-02-26 10:27:20.874913+00:00",
+    "created_at": "2025-02-26T10:27:20.867Z",
+    "updated_at": "2025-02-26T10:27:20.878Z",
+    "image": "laptop_images/mcbook_nSE74tH.jpg"
+  }
+},
+{
+  "model": "home.laptop",
+  "pk": 2,
+  "fields": {
+    "name": "Dell lattitude 3510",
+    "price": "5000000.00",
+    "description": "Juda ajoyib",
+    "created_at": "2025-02-26T10:45:12.790Z",
+    "updated_at": "2025-02-26T10:45:12.790Z",
+    "image": "laptop_images/dell3510.jpg"
+  }
+},
+{
+  "model": "home.laptop",
+  "pk": 3,
+  "fields": {
+    "name": "HP Pavillion 15",
+    "price": "5000000.00",
+    "description": "juda kuchli va katta hotiraga ega",
+    "created_at": "2025-02-26T10:48:32.608Z",
+    "updated_at": "2025-02-26T10:48:32.608Z",
+    "image": "laptop_images/pavilion15.png"
+  }
+},
+{
+  "model": "home.laptop",
+  "pk": 4,
+  "fields": {
+    "name": "Lenovo ThinkPad E16",
+    "price": "7000000.00",
+    "description": "qotmaydi",
+    "created_at": "2025-02-26T10:52:42.777Z",
+    "updated_at": "2025-02-26T10:52:42.777Z",
+    "image": "laptop_images/e16.png"
+  }
+},
+{
+  "model": "home.laptop",
+  "pk": 5,
+  "fields": {
+    "name": "Apple 2",
+    "price": "10000000.00",
+    "description": "Applening dastlabki kompyuterlaridan",
+    "created_at": "2025-02-26T19:18:36.055Z",
+    "updated_at": "2025-02-26T19:18:36.055Z",
+    "image": "laptop_images/apple2.webp"
+  }
+},
+{
+  "model": "home.laptop",
+  "pk": 6,
+  "fields": {
+    "name": "Acer Aspire R&G",
+    "price": "12000000.00",
+    "description": "creative va moslashuvchan dizaynga ega",
+    "created_at": "2025-02-26T19:21:18.904Z",
+    "updated_at": "2025-02-27T20:19:42.252Z",
+    "image": "laptop_images/acer.jpg"
+  }
+},
+{
+  "model": "home.laptop",
+  "pk": 7,
+  "fields": {
+    "name": "Lenovo ThinkBook Plus Gen 4",
+    "price": "12000000.00",
+    "description": "ajoyib dizayn va bukuluvchi ekranlarga ega",
+    "created_at": "2025-02-26T19:25:25.868Z",
+    "updated_at": "2025-02-26T19:25:25.868Z",
+    "image": "laptop_images/lenovo.png"
+  }
+},
+{
+  "model": "home.laptop",
+  "pk": 9,
+  "fields": {
+    "name": "Yulovchi HBN",
+    "price": "15000000.00",
+    "description": "",
+    "created_at": "2025-02-27T17:11:07.458Z",
+    "updated_at": "2025-02-27T17:11:07.458Z",
+    "image": "laptop_images/HBN_hYyEEFH.png"
+  }
+}
+]

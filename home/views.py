@@ -1,5 +1,9 @@
-from django.shortcuts import render, redirect
+from importlib.metadata import files
+
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Phone, Laptop, Watch
+from .forms import PhoneForm, LaptopForm, WatchForm
+
 
 def home(request):
     phones = Phone.objects.all()[:3]
@@ -71,79 +75,93 @@ def watch_details(request, pk):
     return render(request, 'watch_details.html', context=context)
 
 
-
-def phone_create(request):
-    if request.method == 'POST':
-        phone = Phone()
-        phone.name = request.POST.get('name', '')
-        phone.price = request.POST.get('price')
-        phone.description = request.POST.get('description', '')
-        phone.image = request.FILES.get('image')
-        phone.save()
+def phone_create_form(request):
+    form = PhoneForm(request.POST, request.FILES)
+    if form.is_valid():
+        phone = form.save()
         return redirect('phone_details', pk=phone.id)
-    return render(request, 'phone_create.html', {'phone' : 'phone'})
+    return render(request, 'phone_create.html', {'form' : form})
+
+
+def laptop_create_form(request):
+    form = LaptopForm(request.POST, request.FILES)
+    if form.is_valid():
+        laptop = form.save()
+        return redirect('laptop_details', pk=laptop.id)
+    return render(request, 'laptop_create.html', {'form' : form})
 
 
 
-def laptop_create(request):
-    if request.method == "POST":
-        laptop = Laptop()
-        laptop.name = request.POST.get('name', "")
-        laptop.price = request.POST.get('price', '')
-        laptop.description = request.POST.get('description', '')
-        laptop.image = request.FILES.get('image')
-        laptop.save()
-        return redirect("laptop_details", pk=laptop.id)
-    return render(request, 'laptop_create.html', {"laptop" : 'laptop'})
-
-
-def watch_create(request):
-    if request.method == "POST":
-        watch = Watch()
-        watch.name = request.POST.get("name", '')
-        watch.price = request.POST.get("price", '')
-        watch.description = request.POST.get("description", '')
-        watch.image = request.FILES.get("image")
-        watch.save()
-        return redirect("watch_details", pk=watch.id)
-    return render(request, 'watch_create.html', {'watch': "watch"})
-
+def watch_create_form(request):
+    form = WatchForm(request.POST, request.FILES)
+    if form.is_valid():
+        watch = form.save()
+        redirect('watch_details', pk=watch.id)
+    return render(request, 'watch_create.html', {'form':form})
 
 
 
 def phone_update(request, pk):
-    phone = Phone.objects.get(id=pk)
+    phone = get_object_or_404(Phone, id=pk)
     if request.method == 'POST':
-        phone.name = request.POST.get('name', phone.name)
-        phone.price = request.POST.get('price', phone.price)
-        phone.description = request.POST.get('description', phone.description)
-        phone.image = request.FILES.get('image', phone.image)
-        phone.save()
-        return redirect('phone_details', pk=pk)
-    return render(request, 'phone_update.html', {'phone':phone})
+        form = PhoneForm(request.POST, request.FILES, instance=phone)
+        if form.is_valid():
+            form.save()
+            return redirect('phone_details', pk=pk)
+    else:
+        form = PhoneForm(instance=phone)
+    return render(request, 'phone_update.html', {'form':form, 'phone':phone})
 
 
 
 def laptop_update(request, pk):
-    laptop = Laptop.objects.get(id=pk)
+    laptop = get_object_or_404(Laptop, id=pk)
     if request.method == 'POST':
-        laptop.name = request.POST.get('name', laptop.name)
-        laptop.price = request.POST.get('price', laptop.price)
-        laptop.description = request.POST.get('description', laptop.description)
-        laptop.image = request.FILES.get('image', laptop.image)
-        laptop.save()
-        return redirect('laptop_details', pk=pk)
-    return render(request, 'laptop_update.html', {'laptop' : laptop})
+        form = LaptopForm(request.POST, request.FILES, instance=laptop)
+        if form.is_valid():
+            form.save()
+            return redirect('laptop_details', pk=pk)
+    else:
+        form = LaptopForm(instance=laptop)
+    return render(request, 'laptop_update.html', {"form":form, "laptop":laptop})
+
 
 
 
 def watch_update(request, pk):
+    watch = get_object_or_404(Laptop, id=pk)
+    if request.method == "POST":
+        form = WatchForm(request.POST, request.FILES, instance=watch)
+        if form.is_valid():
+            form.save()
+            return redirect('watch_datails', pk=pk)
+    else:
+        form = WatchForm(instance=watch)
+    return render(request, 'watch_update.html', {"form":form, "watch":watch})
+
+
+
+
+def phone_delete(request, pk):
+    phone = Phone.objects.get(id=pk)
+    if request.method == "POST":
+        phone.delete()
+        return redirect('phones')
+    return render(request, 'phone_delete.html', {'phone' : phone})
+
+
+def laptop_delete(request, pk):
+    laptop = Laptop.objects.get(id=pk)
+    if request.method == "POST":
+        laptop.delete()
+        return redirect('laptops')
+    return render(request, 'laptop_delete.html', {'laptop':laptop})
+
+def watch_delete(request, pk):
     watch = Watch.objects.get(id=pk)
     if request.method == "POST":
-        watch.name = request.POST.get('name', watch.name)
-        watch.price = request.POST.get('price', watch.price)
-        watch.description = request.POST.get('description', watch.description)
-        watch.image = request.FILES.get('image', watch.image)
-        watch.save()
-        return redirect('watch_details', pk=pk)
-    return render(request, 'watch_update.html', {'watch' : watch})
+        watch.delete()
+        return redirect('watches')
+    return render(request, 'watch_delete.html', {'watch':watch})
+
+

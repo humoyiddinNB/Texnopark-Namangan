@@ -76,12 +76,8 @@ WSGI_APPLICATION = 'texnopark_namangan.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': "nam_texnopark",
-        "USER" : 'defendereviver71',
-        'PASSWORD': '571632571632',
-        'HOST' : "localhost",
-        "PORT" : "5432"
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
